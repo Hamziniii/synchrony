@@ -6,6 +6,6 @@ Windows: https://www.docker.com/get-started/
 
 # essentia docker img
 1. Build the image from Dockerfile: `docker build -t essentia:latest .`
-2. Start the container via the scripts (`conatiner.bat` or `container.sh`)
+2. Start the container via the scripts: (`conatiner.bat` or `container.sh`)
 3. Make changes locally (chagnes are propogated to container due to docker bind mounts)
-4. Run your script in the container, e.g. `python3 app.py`
+4. Run your script inside the container: `python3 app.py`
