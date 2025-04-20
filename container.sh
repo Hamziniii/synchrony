@@ -1,0 +1,1 @@
+docker run --rm -it --volume $(pwd):/essentia/synchrony --entrypoint bash essentia 

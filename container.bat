@@ -1,0 +1,1 @@
+docker run --rm -it --volume %cd%:/essentia/synchrony --entrypoint bash essentia 
