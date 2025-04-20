@@ -6,9 +6,11 @@ def main():
     embedding_model = TensorflowPredictEffnetDiscogs(graphFilename="discogs-effnet-bs64-1.pb", output="PartitionedCall:1")
     embeddings = embedding_model(audio)
 
+    # Load the pre-trained model for genre classification and make predictions
     model = TensorflowPredict2D(graphFilename="genre_discogs400-discogs-effnet-1.pb", input="serving_default_model_Placeholder", output="PartitionedCall:0")
     predictions = model(embeddings)
     predictions = predictions[0] 
+
     # Load genre labels from JSON
     with open("genre_discogs400-discogs-effnet-1.json") as f:
         model_info = json.load(f)
@@ -26,7 +28,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# from essentia.standard import MonoLoader, TensorflowPredictMusiCNN, TensorflowPredictVGGish
-# import numpy as np
-# import matplotlib.pyplot as plt
