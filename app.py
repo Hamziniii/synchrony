@@ -3,6 +3,8 @@ import essentia.standard as es
 import numpy as np
 
 def main():
+
+    print("Essentia version:", essentia.__version__)
     # Example: Load an audio file and compute its duration
     audio_loader = es.MonoLoader(filename='Karaoke.mp3', sampleRate=44100)
     audio = audio_loader()
